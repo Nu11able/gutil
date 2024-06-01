@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Reflection.hpp"
+#include "reflection.hpp"
 
 using namespace std;
 struct Test
@@ -33,3 +33,11 @@ int main()
     cout << "#5:" << t.a << " " << t.b << endl;
     return 0;
 }
+/* output
+#0:42 Hello, World!
+#1: type name->Test
+#2:10 set by set_xxx function
+#3:10 set by set_xxx function
+#4:20 set by SetValue function
+#5:20 set by SetValue function
+*/
