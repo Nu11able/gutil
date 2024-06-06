@@ -1,6 +1,8 @@
 # GUtil
 some cpp code snippet
 
+## compiler 
+- XCode 15.3
 
 ## Simple Reflection
 [example](./example/reflection.cpp)
