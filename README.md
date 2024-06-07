@@ -3,6 +3,7 @@ some cpp code snippet
 
 ## compiler 
 - XCode 15.3
+- VisualStudio2022 MSVC 19.35.32215.0
 
 ## Simple Reflection
 [example](./example/reflection.cpp)
