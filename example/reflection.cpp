@@ -1,5 +1,5 @@
 #include <iostream>
-#include "reflection.hpp"
+#include "gutil/reflection.hpp"
 
 using namespace std;
 struct Test
@@ -31,6 +31,21 @@ int main()
     test_reflection.SetValue("a", "hello"); // this will not change the value
     test_reflection.SetValue("b", "hello"); // this will not change the value
     cout << "#5:" << t.a << " " << t.b << endl;
+
+    test_reflection.SetValue("b", string("use GetValue<> function")); // this will not change the value
+    cout << "#6:" << test_reflection.GetValue<int>("a") << " " << test_reflection.GetValue<std::string>("b") << endl;
+    
+    try {
+        cout << "#7:" << test_reflection.GetValue<char>("a") << " " << test_reflection.GetValue<std::string>("b") << endl;
+    } catch (const std::exception& e) {
+        cout << "#7 catch error: " << e.what() << endl;
+    }
+
+    try {
+        cout << "#8:" << test_reflection.GetValue<int>("c") << endl;
+    } catch (const std::exception& e) {
+        cout << "#8 catch error: " << e.what() << endl;
+    }
     return 0;
 }
 /* output
@@ -40,4 +55,7 @@ int main()
 #3:10 set by set_xxx function
 #4:20 set by SetValue function
 #5:20 set by SetValue function
+#6:20 use GetValue<> function
+#7:#7 catch error: type not match
+#8:#8 catch error: field not found
 */

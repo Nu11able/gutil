@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "ref_object.hpp"
+#include "gutil/ref_object.hpp"
 
 class Test : public RefObject
 {

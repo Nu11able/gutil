@@ -3,6 +3,7 @@
 #include <map>
 #include <type_traits>
 #include <memory>
+#include <exception>
 
 template<typename T>
 struct ReflectionTypeId {
@@ -103,6 +104,17 @@ public: \
         auto iter = std::static_pointer_cast<MemberInfo<T>>(it->second); \
         (this->*(iter->setter))(value); \
         return 0; \
+    } \
+    template<typename T> \
+    const T& GetValue(const std::string_view property) { \
+        auto fieldMap_ = GetFieldMap(); \
+        auto it = fieldMap_.find(property.data()); \
+        if (it == fieldMap_.end()) \
+            throw std::logic_error("field not found"); \
+        if (it->second->type != ReflectionTypeId<T>::TypeId()) \
+            throw std::logic_error("type not match"); \
+        auto iter = std::static_pointer_cast<MemberInfo<T>>(it->second); \
+        return (this->*(iter->getter))(); \
     } \
     static constexpr std::string_view type_name { #struct_name }; \
     static const MemberMapType& GetFieldMap() { \

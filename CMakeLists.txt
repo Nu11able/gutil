@@ -13,4 +13,3 @@ foreach(file_path ${EXAMPLES})
     STRING(REGEX REPLACE ".+/(.+)\\..*" "\\1" file_name ${file_path})
     add_executable(${file_name} ${file_path})
 endforeach(file_path ${TEST_FILES})
-
