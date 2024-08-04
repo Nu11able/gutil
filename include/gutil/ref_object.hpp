@@ -1,3 +1,9 @@
+/**
+ * Author: Nu11able
+ * Date: 2024-08-04
+ * License: MIT License
+ */
+
 #pragma once
 #include <atomic>
 

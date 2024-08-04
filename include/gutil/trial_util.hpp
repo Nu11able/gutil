@@ -1,3 +1,10 @@
+/**
+ * Author: Nu11able
+ * Date: 2024-08-04
+ * License: MIT License
+ */
+
+#pragma once
 #include <type_traits>
 
 template<typename T, typename = void>

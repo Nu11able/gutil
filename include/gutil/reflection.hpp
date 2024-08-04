@@ -1,3 +1,10 @@
+/**
+ * Author: Nu11able
+ * Date: 2024-08-03
+ * License: MIT License
+ * Description: a simle reflection
+ */
+
 #pragma once
 #include <string>
 #include <map>
