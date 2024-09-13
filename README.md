@@ -27,3 +27,9 @@ MAKE_REFLECTION(Test, a, b);
 let `T` be derived from `RefObject` and then use `Ptr<T>` like a shared_ptr, it's helpful if you want to implement a gc system with a base object
 - Ptr<T> 
 - Attach/Detach
+
+## ubuntu server24.04
+this script helps you to install baseic dev tools
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Nu11able/gutil/main/devenv.sh)"
+```
