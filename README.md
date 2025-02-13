@@ -30,6 +30,13 @@ let `T` be derived from `RefObject` and then use `Ptr<T>` like a shared_ptr, it'
 
 ## ubuntu server24.04
 this script helps you to install baseic dev tools
+- gcc-14.2
+- zlib v1.3.1
+- openssl-3.4.1
+- absl 20250127.0
+- protobuf v29.3
+- grpc v1.70.1
+- boost 1.87.0
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Nu11able/gutil/main/devenv.sh)"
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/Nu11able/gutil/main/devenv.sh)"
 ```
